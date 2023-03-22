@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    text-align: center;
+    margin: 100px auto;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+}
+
+.task-input {
+    border-radius: 3px;
+    margin: 5px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid black;
+
+}
+

@@ -1,0 +1,21 @@
+.task-input {
+    border-radius: 3px;
+    margin: 5px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid black;
+
+}
+
+.btn-create {
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgb(68, 111, 222);
+    color: white;
+}
+
+.btn-create:hover {
+    background-color: rgb(45, 73, 142);
+
+}
