@@ -1,0 +1,35 @@
+.task-info {
+    font-weight: 600;
+    display: flex;
+    gap: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: max-content;
+    height: 50px;
+    background-color: white;
+    padding: 10px;
+}
+
+.btn-delete {
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgb(76, 9, 107);
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: rgb(55, 7, 77);
+
+}
+
+.btn-edit {
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgb(45, 117, 180);
+    color: white;
+}
+.btn-edit:hover {
+    background-color: rgb(27, 74, 114);
+
+}
+

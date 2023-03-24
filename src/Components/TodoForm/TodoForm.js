@@ -4,7 +4,7 @@ import SearchTaskForm from "../SearchTaskForm/SearchTaskForm";
 import TaskContainer from "../TaskContainer/TaskContainer";
 import "./todo-form.css";
 
-function TodoForm() {
+function TodoForm({ validate }) {
   const [taskList, setTaskList] = useState([]);
   const [task, setTask] = useState("");
 
@@ -64,6 +64,7 @@ function TodoForm() {
           newList.push(task);
         }
         setSearchList(newList);
+        return "done";
       });
     }
     // const temp = taskList.filter((task) => task.title === taskSearch);
@@ -85,30 +86,38 @@ function TodoForm() {
   return (
     <div className="container">
       <h1>TO DO LIST</h1>
-      <CreateTaskForm
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        task={task}
-      />
-      <SearchTaskForm
-        handleSubmitSearch={handleSubmitSearch}
-        handleChangeSearch={handleChangeSearch}
-        taskSearch={taskSearch}
-      />
-      {isSearch ? (
-        <TaskContainer
-          taskList={searchList}
-          onUpdate={handleClickUpdate}
-          onDelete={handleClickDelete}
-          changeState={changeState}
-        />
+      {validate ? (
+        <div>
+          <CreateTaskForm
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            task={task}
+          />
+          <SearchTaskForm
+            handleSubmitSearch={handleSubmitSearch}
+            handleChangeSearch={handleChangeSearch}
+            taskSearch={taskSearch}
+          />
+          {isSearch ? (
+            <TaskContainer
+              taskList={searchList}
+              onUpdate={handleClickUpdate}
+              onDelete={handleClickDelete}
+              changeState={changeState}
+            />
+          ) : (
+            <TaskContainer
+              taskList={taskList}
+              onUpdate={handleClickUpdate}
+              onDelete={handleClickDelete}
+              changeState={changeState}
+            />
+          )}
+        </div>
       ) : (
-        <TaskContainer
-          taskList={taskList}
-          onUpdate={handleClickUpdate}
-          onDelete={handleClickDelete}
-          changeState={changeState}
-        />
+        <h1 className="alert-title">
+          Debes iniciar sesión para acceder a las funcionalidades de To Do List
+        </h1>
       )}
     </div>
   );

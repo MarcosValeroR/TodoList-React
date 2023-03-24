@@ -7,10 +7,10 @@ function StateButtons({task,changeState}) {
       <button
         className="btn-state"
         onClick={() => {
-          changeState(task, "incomplete");
+          changeState(task, "incompleto");
         }}
         style={
-          task.estado === "incomplete"
+          task.estado === "incompleto"
             ? { backgroundColor: "red", color: "white" }
             : {}
         }
